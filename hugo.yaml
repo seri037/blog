@@ -1,8 +1,8 @@
 ---
-title: "Zen demo site"
-baseURL: "https://zen-demo.xdeb.org/"
+title: "seri%"
+baseURL: "https://seri037.github.io/blog"
 theme: "github.com/frjo/hugo-theme-zen/v3"
-languageCode: "en-GB"
+languageCode: "en-US"
 defaultContentLanguage: "en"
 pluralizelisttitles: false
 removePathAccents: true
@@ -10,8 +10,8 @@ paginate: 10
 paginatePath: "page"
 rssLimit: 20
 author:
-  name: "Fredrik Jonsson"
-  url: "https://xdeb.org"
+  name: "seri037"
+  url: "https://github.com/seri037"
 
 markup:
   goldmark:
@@ -33,9 +33,9 @@ outputs:
   section: ["HTML","RSS", "JSON"]
 
 params:
-  contact: "frjo@xdeb.org"
+  contact: "serix2004@gmail.com"
   copyright: '<!--Creative Commons License-->This site is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> licence.<!--/Creative Commons License-->'
-  description: "The zen theme for Hugo demo site."
+  description: "seri%'s blog."
   dateformat: "2 January, 2006"
   favicon: "apple-touch-icon.png"
   feedlinks: true
@@ -57,10 +57,10 @@ languages:
   en:
     weight: 1
     languageName: "English"
-    languageCode: "en-GB"
+    languageCode: "en-US"
     contentDir: content/en
   sv:
     weight: 2
-    languageName: "Svenska"
-    languageCode: "sv-SE"
-    contentDir: content/sv
+    languageName: "Chinese"
+    languageCode: "zh-CN"
+    contentDir: content/zh
