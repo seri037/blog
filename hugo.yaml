@@ -1,6 +1,6 @@
 ---
 title: "seri%"
-baseURL: "http://seri037.github.io/"
+baseURL: "http://seri037.github.io/blog"
 theme: "github.com/frjo/hugo-theme-zen/v3"
 languageCode: "en-US"
 defaultContentLanguage: "en"
