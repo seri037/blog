@@ -1,6 +1,6 @@
 ---
 title: "seri%"
-baseURL: "https://seri037.github.io/blog"
+baseURL: "http://seri037.github.io/blog"
 theme: "github.com/frjo/hugo-theme-zen/v3"
 languageCode: "en-US"
 defaultContentLanguage: "en"
@@ -11,7 +11,7 @@ paginatePath: "page"
 rssLimit: 20
 author:
   name: "seri037"
-  url: "https://github.com/seri037"
+  url: "http://github.com/seri037"
 
 markup:
   goldmark:
@@ -59,7 +59,7 @@ languages:
     languageName: "English"
     languageCode: "en-US"
     contentDir: content/en
-  sv:
+  zh:
     weight: 2
     languageName: "Chinese"
     languageCode: "zh-CN"
