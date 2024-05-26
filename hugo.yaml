@@ -1,5 +1,5 @@
 ---
-title: "seri%"
+title: "seri037's blog"
 baseURL: "http://seri037.github.io/"
 theme: "github.com/frjo/hugo-theme-zen/v3"
 languageCode: "en-US"
@@ -36,31 +36,35 @@ params:
   contact: "serix2004@gmail.com"
   copyright: '<!--Creative Commons License-->This site is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> licence.<!--/Creative Commons License-->'
   description: "seri%'s blog."
+  siteName: false
+  menuInHeader: true 
   dateformat: "2 January, 2006"
-  favicon: "apple-touch-icon.png"
+  #favicon: ""
   feedlinks: true
-  icon: "apple-touch-icon.png"
-  image: "apple-touch-icon.png"
+  #icon: ""
+  #image: ""
+  logo : true
+  themeColor : "#ffffff"
+  #logoPath: ""
   imageMaxWidth: 400
   logoWidth: 64
   logoHeight: 64
   mainSections:
-    - blog
   mobileMenu: true
   mobileMenuOutline: true
   poweredby: true
   realfavicongenerator: true
-  sidebar: false
+  sidebar: true
   submitted: true
 
 languages:
   en:
     weight: 1
-    languageName: "English"
+    languageName: "EN"
     languageCode: "en-US"
     contentDir: content/en
   zh:
     weight: 2
-    languageName: "Chinese"
+    languageName: "ZH"
     languageCode: "zh-CN"
     contentDir: content/zh
