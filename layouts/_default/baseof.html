@@ -3,7 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>{{ block "title" . }}{{ .Title }} – {{ site.Title }}{{ end }}</title>
+<title>{{ block "title" . }}
+    {{if .Title}}
+        {{ .Title }}
+    {{else -}}
+        {{with .GetTerms "hidden_title" }}{{ range . }}{{.LinkTitle}}{{end}}{{end}}
+    {{end -}} – {{ site.Title }}{{ end }}</title>
 {{ partial "meta.html" . }}
 {{ partialCached "styles.html" . }}
 {{ partial "meta_json_ld.html" . }}

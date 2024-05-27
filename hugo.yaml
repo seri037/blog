@@ -6,12 +6,18 @@ languageCode: "en-US"
 defaultContentLanguage: "en"
 pluralizelisttitles: false
 removePathAccents: true
+enableEmoji: true
 paginate: 10
 paginatePath: "page"
 rssLimit: 20
 author:
   name: "seri037"
   url: "http://github.com/seri037"
+
+taxonomies:
+  category: categories
+  tag: tags
+  hidden_title: hidden_title
 
 markup:
   goldmark:
@@ -32,6 +38,22 @@ outputs:
   home: ["HTML","RSS", "JSON", "SearchIndex"]
   section: ["HTML","RSS", "JSON"]
 
+menus:
+  main:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: Posts
+    pageRef: /posts
+    weight: 20
+  - name: Categories
+    pageRef: /categories
+    weight: 30
+  - name: About
+    pageRef: /about
+    weight: 40
+
+
 params:
   contact: "serix2004@gmail.com"
   copyright: '<!--Creative Commons License-->This site is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> licence.<!--/Creative Commons License-->'
@@ -49,12 +71,16 @@ params:
   imageMaxWidth: 400
   logoWidth: 64
   logoHeight: 64
+  blogSections:
+    - posts
+  #breadcrumbSections:
+  #  - post
   mainSections:
   mobileMenu: true
   mobileMenuOutline: true
   poweredby: true
   realfavicongenerator: true
-  sidebar: true
+  sidebar: false
   submitted: true
 
 languages:

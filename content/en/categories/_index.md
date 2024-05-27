@@ -1,0 +1,5 @@
+---
+hidden_title:
+    - Categories
+---
+

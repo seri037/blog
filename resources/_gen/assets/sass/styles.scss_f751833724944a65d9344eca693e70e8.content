@@ -1,34 +1,34 @@
 :root {
-  --color-brand: #333333;
-  --color-brand-alt: #999999;
-  --color-brand-light: #cccccc;
-  --color-brand-dark: #666666;
+  --color-brand: #6f42c1;
+  --color-brand-alt: #f90;
+  --color-brand-light: #b392f0;
+  --color-brand-dark: #4b2e83;
   --color-text: #000;
   --color-text-bg: #fff;
   --color-text-meta: #666666;
-  --color-link: #333333;
-  --color-link-visited: #333333;
-  --color-link-hover: #999999;
+  --color-link: #6f42c1;
+  --color-link-visited: #6f42c1;
+  --color-link-hover: #f90;
   --color-link-active: #c00;
   --color-link-inverted: #fff;
   --color-link-visited-inverted: #fff;
   --color-link-hover-inverted: #fff;
   --color-link-active-inverted: #c00;
-  --color-border: #333333;
-  --color-border-light: #cccccc;
-  --color-border-dark: #666666;
+  --color-border: #6f42c1;
+  --color-border-light: #b392f0;
+  --color-border-dark: #4b2e83;
   --color-autocomplete: #000;
   --color-autocomplete-bg: #fff;
   --color-autocomplete-select: #fff;
   --color-autocomplete-select-bg: #0072b9;
   --color-body-bg: #fff;
-  --color-header-bg: #fff;
-  --color-footer-bg: #fff;
+  --color-header-bg: #f7f7f7;
+  --color-footer-bg: #f7f7f7;
   --color-backdrop: #eeeeee;
-  --color-mobile-menu: #333333;
+  --color-mobile-menu: #6f42c1;
   --color-mobile-menu-cover: rgba(0, 0, 0, 0.2);
-  --color-button: #333333;
-  --color-button-hover: #999999;
+  --color-button: #6f42c1;
+  --color-button-hover: #f90;
   --color-button-text: #fff;
   --color-button-text-hover: #fff;
   --color-button-disabled: #999999;
@@ -49,7 +49,7 @@
   --color-watermark: #eeeeee;
   --color-headings: #333333;
   --color-code: #333333;
-  --color-highlight: #999999;
+  --color-highlight: #f90;
   --fs-xxxxl: clamp(2.4881rem, calc(1.8896rem + 2.9924vw), 4.2088rem);
   --fs-xxxl: clamp(2.0738rem, calc(1.6968rem + 1.8848vw), 3.1575rem);
   --fs-xxl: clamp(1.7281rem, calc(1.5053rem + 1.1141vw), 2.3688rem);
@@ -79,9 +79,9 @@
   --gutters: calc(5px + 1.5625vw);
   --heading-line-height: 1.3;
   --indent-amount: 2rem;
-  --max-content-width: 777px;
+  --max-content-width: 800px;
   --max-line-width: 70ch;
-  --max-page-width: 1111px; }
+  --max-page-width: 1000px; }
 
 html {
   -webkit-text-size-adjust: none;
@@ -814,9 +814,12 @@ button[disabled],
     color: var(--color-text);
     text-decoration: none; }
   .header__site-link:hover, .header__site-link:focus {
-    text-decoration: underline; }
+    text-decoration: none; }
   @media (min-width: 666px) {
     .header__region {
+      margin-inline-start: auto; } }
+  @media (min-width: 666px) {
+    .header__language-selector {
       margin-inline-start: auto; } }
 .hidden,
 html.nojs .nojs-hidden,
@@ -1088,7 +1091,10 @@ legend,
 figcaption {
   font-size: var(--fs-s); }
 
-.language-selector,
+.language-selector {
+  font-size: var(--fs-xs);
+  margin-top: 20px; }
+
 .footer {
   font-size: var(--fs-xs); }
 
@@ -1148,8 +1154,8 @@ article pre {
     .main-menu a:hover, .main-menu a:focus {
       background-color: var(--color-button-hover); }
     .main-menu a:active, .main-menu a[aria-current] {
-      background-color: var(--color-button);
-      text-decoration: underline; }
+      background-color: var(--color-button-hover);
+      text-decoration: none; }
 
 .search-text {
   font-size: var(--fs-l); }

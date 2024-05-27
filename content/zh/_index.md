@@ -1,9 +1,10 @@
 ---
-title: Index - zh
+title: Home - zh
 
 ---
 
-If you got here you just discovered the language switcher that is built in to the Zen theme.
+# :wave:
 
-This should be in Swedish but it just here to show how the multilingual feature works.
+你好！欢迎来到我的博客。
 
+{{< search >}}

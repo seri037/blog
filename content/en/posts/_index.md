@@ -1,0 +1,4 @@
+---
+hidden_title:
+    - Posts
+---

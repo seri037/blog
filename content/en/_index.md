@@ -1,8 +1,9 @@
 ---
-title: Index
-date: 2022-08-03T20:48:20+02:00
-
+hidden_title:
+    - Home
+submitted: false
 ---
+# :wave:
+Hi there! Welcome to my blog.
 
-# Hi 
-Hi there! Welcome to my blog :)
+{{< search >}}
