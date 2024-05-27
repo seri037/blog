@@ -1,4 +1,3 @@
 ---
-hidden_title:
-    - Posts
+title: All Posts
 ---
