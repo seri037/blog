@@ -1,55 +1,129 @@
+/* The main stylesheet for this theme. */
+/* Sass init files. */
+/* Initialization partial
+
+To make it easier to use all variables and mixins in any Sass file in this
+project, each .scss file has a `@import 'init';` declaration. The _init.scss
+file is in charge of importing all the other partials needed for the
+project. */
+/* Variables. */
+/* Variables
+These need to be sass variables since they are used in sass functions and mixins.
+Override sass variables in "assets/sass/_extra.scss" */
+/* Base line height, unitless. */
+/* The font sizes in our type hierarchy as tee shirt sizes.
+Size m is base.
+Use like this: var(--fs-m) */
+/* The responsive font sizes in our type hierarchy as tee shirt sizes.
+Size m is base.
+Use like this: var(--fs-m) */
+/* Set the font sizes to use, fixed or fluid. */
+/* Breakpoints (Deprecated in v5, use css @media directly instead.)
+Use the `respond-to(s)` mixin to use named breakpoints. */
+/* Spacing (Deprecated in v5, use spacing css variables instead.)
+$spacing: (
+  xxl:        3,
+  xl:         2,
+  l:          1.5,
+  m:          1,
+  s:          0.75,
+  xs:         0.5,
+  xxs:        0.3,
+  0:          0,
+);
+
+/* The max content width. (Consider using one of the breakpoints.) */
+/* The max page width. Defaults to max-content-width.
+Setting this to a larger value than max-content-width allows
+content with class "stretch" to stretch out to the page edge. */
+/* Mixins and functions. */
+/* Declaring CSS colour variables in :root. */
+/* Theme colours. */
+/* Override css variables in "assets/sass/_custom.scss" */
 :root {
-  --color-brand: #6f42c1;
-  --color-brand-alt: #f90;
-  --color-brand-light: #b392f0;
-  --color-brand-dark: #4b2e83;
-  --color-text: #000;
-  --color-text-bg: #fff;
-  --color-text-meta: #666666;
-  --color-link: #6f42c1;
-  --color-link-visited: #6f42c1;
-  --color-link-hover: #f90;
-  --color-link-active: #c00;
-  --color-link-inverted: #fff;
-  --color-link-visited-inverted: #fff;
-  --color-link-hover-inverted: #fff;
-  --color-link-active-inverted: #c00;
-  --color-border: #6f42c1;
-  --color-border-light: #b392f0;
-  --color-border-dark: #4b2e83;
-  --color-autocomplete: #000;
-  --color-autocomplete-bg: #fff;
-  --color-autocomplete-select: #fff;
-  --color-autocomplete-select-bg: #0072b9;
-  --color-body-bg: #fff;
-  --color-header-bg: #f7f7f7;
-  --color-footer-bg: #f7f7f7;
-  --color-backdrop: #eeeeee;
-  --color-mobile-menu: #6f42c1;
-  --color-mobile-menu-cover: rgba(0, 0, 0, 0.2);
-  --color-button: #6f42c1;
-  --color-button-hover: #f90;
-  --color-button-text: #fff;
-  --color-button-text-hover: #fff;
-  --color-button-disabled: #999999;
-  --color-mark-highlight: #c00;
-  --color-mark-bg: #fd0;
-  --color-menu-active: #000;
-  --color-preview-bg: #fffadb;
-  --color-row-header: transparent;
-  --color-row-odd: #f7f7f7;
-  --color-row-even: transparent;
-  --color-status: #43a808;
-  --color-status-bg: #f4feee;
-  --color-warning: #000;
-  --color-warning-bg: #fffce6;
-  --color-warning-border: #fd0;
-  --color-error: #c00;
-  --color-error-bg: #fff0f0;
-  --color-watermark: #eeeeee;
-  --color-headings: #333333;
-  --color-code: #333333;
-  --color-highlight: #f90;
+  /* Base colours. */
+  --color-black:                  oklch(1% 0.01 0);
+  --color-nearblack:              oklch(25% 0.01 0);
+  --color-grey-700:               oklch(38% 0 0);
+  --color-grey-600:               oklch(49% 0 0);
+  --color-grey-500:               oklch(60% 0 0);
+  --color-grey-400:               oklch(71% 0 0);
+  --color-grey-300:               oklch(80% 0 0);
+  --color-grey-200:               oklch(89% 0 0);
+  --color-grey-100:               oklch(95% 0 0);
+  --color-nearwhite:              oklch(98% 0 0);
+  --color-white:                  oklch(100% 0 0);
+  --color-red:                    oklch(65% 0.2 24);
+  --color-yellow:                 oklch(65% 0.12 80);
+  --color-green:                  oklch(65% 0.19 138);
+  --color-blue:                   oklch(65% 0.16 247);
+  /* Transparent colours. */
+  --color-black-60:               oklch(0% 0 0 / 0.6);
+  --color-black-40:               oklch(0% 0 0 / 0.4);
+  --color-black-20:               oklch(0% 0 0 / 0.2);
+  --color-black-10:               oklch(0% 0 0 / 0.1);
+  --color-white-20:               oklch(100% 0 0 / 0.2);
+  --color-white-10:               oklch(100% 0 0 / 0.1);
+  /* Brand colours. */
+  --color-brand:                  var(--color-nearblack);
+  --color-brand-alt:              var(--color-grey-500);
+  --color-brand-light:            var(--color-grey-300);
+  --color-brand-dark:             var(--color-grey-700);
+  /* Text colours. */
+  --color-text:                   var(--color-black);
+  --color-text-bg:                var(--color-white);
+  --color-text-meta:              var(--color-grey-600);
+  --color-headings:               var(--color-nearblack);
+  --color-code:                   var(--color-nearblack);
+  /* Link colours. */
+  --color-link:                   var(--color-brand);
+  --color-link-visited:           var(--color-brand);
+  --color-link-hover:             var(--color-brand-alt);
+  --color-link-active:            var(--color-red);
+  --color-link-inverted:          var(--color-white);
+  --color-link-visited-inverted:  var(--color-white);
+  --color-link-hover-inverted:    var(--color-white);
+  --color-link-active-inverted:   var(--color-red);
+  /* Button colours. */
+  --color-button:                 var(--color-brand);
+  --color-button-hover:           var(--color-brand-alt);
+  --color-button-text:            var(--color-white);
+  --color-button-text-hover:      var(--color-white);
+  --color-button-disabled:        var(--color-grey-400);
+  /* Border colours. */
+  --color-border:                 var(--color-brand);
+  --color-border-light:           var(--color-brand-light);
+  --color-border-dark:            var(--color-brand-dark);
+  /* Background colours. */
+  --color-header-bg:              var(--color-white);
+  --color-body-bg:                var(--color-white);
+  --color-footer-bg:              var(--color-white);
+  --color-backdrop:               var(--color-grey-100);
+  /* Mobil menu colours. */
+  --color-mobile-menu:            var(--color-brand);
+  --color-mobile-menu-cover:      var(--color-black-20);
+  /* Form colours. */
+  --color-accent:                 var(--color-brand);
+  /* Row (e.g. in table) colours. */
+  --color-row-header:             transparent;
+  --color-row-odd:                var(--color-nearwhite);
+  --color-row-even:               transparent;
+  /* Status colours. */
+  --color-info:                   var(--color-blue);
+  --color-info-bg:                oklch(from var(--color-blue) 100% 0.03 h);
+  --color-success:                 var(--color-green);
+  --color-success-bg:              oklch(from var(--color-green) 100% 0.03 h);
+  --color-warning:                var(--color-yellow);
+  --color-warning-bg:             oklch(from var(--color-yellow) 100% 0.03 h);
+  --color-error:                  var(--color-red);
+  --color-error-bg:               oklch(from var(--color-red) 100% 0.03 h);
+  /* Highlight colours. */
+  --color-highlight:              var(--color-brand-alt);
+  --color-mark-highlight:         var(--color-red); }
+
+/* Declaring CSS misc variables in :root. */
+:root {
+  /* Convert sass variables to css variables. */
   --fs-xxxxl: clamp(2.4881rem, calc(1.8896rem + 2.9924vw), 4.2088rem);
   --fs-xxxl: clamp(2.0738rem, calc(1.6968rem + 1.8848vw), 3.1575rem);
   --fs-xxl: clamp(1.7281rem, calc(1.5053rem + 1.1141vw), 2.3688rem);
@@ -58,6 +132,56 @@
   --fs-m: 1rem;
   --fs-s: 0.889rem;
   --fs-xs: 0.778rem;
+  --max-content-width: 700px;
+  --max-page-width: 900px;
+  /* Base line height, unitless. */
+  --base-line-height: 1.5;
+  /* Set theme css variables.
+  Override css variables in "assets/sass/_custom.scss" */
+  /* Heading line height, unitless. */
+  --heading-line-height: 1.3;
+  /* The font size set on the root html element.
+  Specify unitless, it will be recalculated as %. */
+  --base-font-size: 18;
+  /* Modern font stacks. See how they look at https://modernfontstacks.com/.
+
+  The following font family declarations use widely available fonts.
+  A user's web browser will look at the comma-separated list and will
+  attempt to use each font in turn until it finds one that is available
+  on the user's computer. The final "generic" font (sans-serif, serif or
+  monospace) hints at what type of font to use if the web browser doesn't
+  find any of the fonts in the list. */
+  /* stylelint-disable value-keyword-case */
+  /* Emojis font stack. Add to end of other stacks when needed. */
+  --emojis:          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  /* System-ui font stack. */
+  --system-ui:       system-ui, sans-serif;
+  /* Serif font stacks. */
+  --ui-serif:        ui-serif, Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --transitional:    Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --old:             'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  --slab:            Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+  --antique:         Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+  --didone:          Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif;
+  /* Sans-serif font stacks. */
+  --ui-sans-serif:   ui-sans-serif, system-ui, sans-serif;
+  --humanist:        Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+  --geometric:       Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --classical:       Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+  --neo:             Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --industrial:      Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  --futura:          Futura, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  /* Rounded Sans-serif font stacks. */
+  --ui-rounded:      ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+  /* Monospace font stacks. */
+  --ui-monospace:    ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  /* stylelint-enable value-keyword-case */
+  /* Font family. */
+  --ff-body: var(--ui-serif);
+  --ff-headings: var(--ui-sans-serif);
+  --ff-alt: var(--system-ui);
+  --ff-monospace: var(--ui-monospace);
+  /* Font weights. */
   --fw-headings: 700;
   --fw-bolder: 900;
   --fw-bold: 700;
@@ -65,107 +189,206 @@
   --fw-normal: 400;
   --fw-light: 300;
   --fw-lighter: 200;
-  --ff-body: ui-serif, Charter, Bitstream Charter, Sitka Text, Cambria, serif;
-  --ff-headings: ui-sans-serif, system-ui, sans-serif;
-  --ff-alt: system-ui, sans-serif;
-  --ff-monospace: ui-monospace, Cascadia Code, Source Code Pro, Menlo, Consolas, DejaVu Sans Mono, monospace;
+  /* Spacing.
+  Generates mt--m (mt = margin-top), mb--m (mb = margin-bottom) and
+  mx--m (mx = margin-block) classes. */
+  --spacing-xxl: calc(3rem * var(--base-line-height));
+  --spacing-xl: calc(2rem * var(--base-line-height));
+  --spacing-l: calc(1.5rem * var(--base-line-height));
+  --spacing-m: calc(1rem * var(--base-line-height));
+  --spacing-s: calc(0.75rem * var(--base-line-height));
+  --spacing-xs: calc(0.5rem * var(--base-line-height));
+  --spacing-xxs: calc(0.3rem * var(--base-line-height));
+  /* Border radius. */
   --radius-xl: 1rem;
   --radius-l: 0.75rem;
   --radius-m: 0.5rem;
   --radius-s: 0.3rem;
   --radius-xs: 0.125rem;
+  /* Breakout amount.
+  How much should the "breakout" be. Defaults to same as gutters value. */
   --breakout: calc(5px + 1.5625vw);
-  --gutters-reverse: calc(0px - (5px + 1.5625vw));
+  /* The left/right gutter/padding. */
   --gutters: calc(5px + 1.5625vw);
-  --heading-line-height: 1.3;
+  --gutters-reverse: calc(0px - (5px + 1.5625vw));
+  /* The amount lists, blockquotes and comments are indented. */
   --indent-amount: 2rem;
-  --max-content-width: 800px;
+  /* The max line width for readability. */
   --max-line-width: 70ch;
-  --max-page-width: 1000px; }
+  /* The pt font-size to be used for printing. */
+  --print-font-size: 12pt; }
 
-html {
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  min-height: 100%;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+/* Ensure fonts get loaded early to minimize front-end performance impact. */
+/* Font faces
 
+Instead of relying on the fonts that are available on a user's computer, you
+can use web fonts which, like images, are resources downloaded to the user's
+browser. Because of the bandwidth and rendering resources required, web fonts
+should be used with care.
+
+Numerous resources for web fonts can be found on the web. Here are a few
+websites where you can find Open Source fonts to download:
+- https://www.fontsquirrel.com/
+- https://www.theleagueofmoveabletype.com
+- https://fonts.google.com
+
+In order to use fonts on a web site you will need to convert them into woff2 format.
+Font Squirrel's Font-Face Generator is a good option:
+  https://www.fontsquirrel.com/tools/webfont-generator
+
+The following is an example @font-face declaration. This font can then be
+used in any ruleset using a property like this:  font-family: Example, serif;
+
+@font-face {
+  font-family: 'Example';
+  src: url('../fonts/example.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+/* Base styles. */
+/* Base styles. */
+/* Broken into modular pieces to make it easier to edit. */
+/* stylelint-disable property-no-vendor-prefix */
+/* Reset browsers to some sane defaults. */
+/* Document */
+/* Use the saner border-box model for all elements. */
 *,
 *::before,
 *::after {
-  box-sizing: inherit; }
+  box-sizing: border-box; }
 
+:root {
+  /* Activate transition to intrinsic sizes like auto and fit-content. */
+  interpolate-size: allow-keywords; }
+
+/* Transitioning page view. */
+@view-transition {
+  navigation: auto; }
+
+html {
+  /* Prevent adjustments of font size. */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  /* Improve text rendering. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* Sections */
 body {
+  /* Remove the margin in all browsers. */
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  /* On short pages, we want the body to fill the entire height */
+  /* of the browser. */
+  min-height: 100vh; }
 
+/* Embedded content */
 img,
+svg,
 picture,
+audio,
 video,
 canvas,
-svg {
-  display: block;
-  max-width: 100%; }
+iframe,
+embed,
+object {
+  display: block; }
 
 img,
-svg {
+svg,
+video {
+  max-width: 100%;
   height: auto; }
 
 figure {
   margin-inline: 0; }
 
+/* Form defaults. */
 input,
 button,
 textarea,
 select {
   font: inherit;
-  max-width: 100%; }
-
-label {
-  display: block;
-  font-weight: var(--fw-bold); }
+  letter-spacing: inherit;
+  word-spacing: inherit; }
 
 @media (min-width: 666px) {
   [type='search'] {
+    /* Correct the odd appearance in Safari on desktop. */
     -webkit-appearance: textfield; } }
 
+/* Code */
 code,
 kbd,
 samp {
   font-family: var(--ff-monospace); }
 
-sub,
-sup {
-  font-size: var(--fs-xs);
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
+/* Numbers */
+td,
+math,
+time[datetime*=':'] {
+  font-variant-numeric: tabular-nums lining-nums; }
 
-sub {
-  bottom: -.25em; }
-
-sup {
-  top: -.5em; }
-
+/* Document */
 html {
+  /* Change the default font family in all browsers. */
   font-family: var(--ff-body);
-  font-size: calc(18 / 16 * 100%);
-  line-height: 1.5;
+  /* Set base font size in percent. */
+  font-size: calc(var(--base-font-size) / 16 * 100%);
+  /* Set text colour. */
   color: var(--color-text); }
 
+body {
+  /* Correct the line height in all browsers. */
+  line-height: var(--base-line-height);
+  /* Accent colour for forms. */
+  accent-color: var(--color-accent); }
+
+/* Form defaults. */
 form {
-  margin-block: 0 1.5rem; }
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m); }
 
 input,
 textarea,
 select {
-  margin-block: 0 1.5rem; }
+  margin-block: 0 var(--spacing-m); }
 
-label:has(+ :required)::after {
-  content: '*';
-  color: var(--color-mark-highlight); }
+label {
+  font-weight: var(--fw-bold);
+  /* Display as block if before input. */
+  /* Mark field as required if needed. */ }
+  label:has(+ input), label:has(+ textarea) {
+    display: block; }
+  label:has(+ :required)::after {
+    content: '*';
+    color: var(--color-mark-highlight); }
 
+/* Valid and invalid state. */
+input:user-valid,
+textarea:user-valid {
+  border-color: var(--color-success);
+  border-style: solid;
+  background-color: var(--color-success-bg); }
+
+input:focus:user-valid,
+textarea:focus:user-valid {
+  border-color: transparent; }
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: var(--color-error);
+  border-style: solid;
+  background-color: var(--color-error-bg); }
+
+input:focus:user-invalid,
+textarea:focus:user-invalid {
+  border-color: transparent;
+  background-color: var(--color-warning-bg); }
+
+/* Set max text line width for readability. */
 input,
 label,
 textarea,
@@ -175,40 +398,72 @@ select {
 fieldset {
   border: 1px solid var(--color-border); }
 
-input {
+/* Make field where you enter more info a bit wider. */
+[type='email'],
+[type='password'],
+[type='range'],
+[type='search'],
+[type='url'] {
+  /* Writing "Min" instead of "min" to force use of css "min()" instead of sass "min()". */
+  /* stylelint-disable-next-line function-name-case */
   width: Min(20em, 100%); }
 
+/* Make field where you enter more info a bit wider. */
 [type='text'],
 textarea {
+  /* Writing "Min" instead of "min" to force use of css "min()" instead of sass "min()". */
+  /* stylelint-disable-next-line function-name-case */
   width: Min(30em, 100%); }
 
+/* Make sure textareas without a rows attribute are not tiny. */
+textarea:not([rows]) {
+  min-height: 7lh; }
+
+/* For forms with multibple fields show submit button below the form. */
 input:not(:only-of-type) + [type='submit'],
 textarea + [type='submit'] {
   display: block; }
 
+/* For forms on mobile with single field add space between it and the submit button. */
 @media (min-width: 666px) {
   input:only-of-type:has(+ [type='submit']) {
-    margin-right: .5rem; } }
+    margin-inline-end: .5rem; } }
 
+/* Grouping content */
+/* Block quotes */
 blockquote {
-  margin-block: 0 1.5rem;
-  margin-inline: var(--indent-amount); }
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m);
+  /* Nicer text wrap, e.g. no lone word on last line. */
+  text-wrap: pretty;
+  /* Also indent the quote on both sides. */
+  margin-inline: var(--indent-amount);
+  /* Set max text line width in main for readability. */
+  max-width: var(--max-line-width); }
 
+/* Lists */
 dl,
 ol,
 ul,
 menu {
-  margin-block: 0 1.5rem; }
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m); }
+
+dt {
+  font-weight: var(--fw-bold); }
 
 dd {
   margin: 0;
-  margin-inline-start: var(--indent-amount); }
+  margin-inline-start: var(--indent-amount);
+  /* Nicer text wrap, e.g. no lone word on last line. */
+  text-wrap: pretty; }
 
 ol,
 ul,
 menu {
   padding: 0;
-  padding-inline-start: var(--indent-amount); }
+  padding-inline-start: var(--indent-amount);
+  /* Turn off margins on nested lists. */ }
   ol ol,
   ol ul,
   ol menu,
@@ -220,42 +475,63 @@ menu {
   menu menu {
     margin: 0; }
 
-.main li {
-  max-width: var(--max-line-width); }
+li {
+  /* Nicer text wrap, e.g. no lone word on last line. */
+  text-wrap: pretty;
+  /* Set max text line width in main for readability. */ }
+  .main li {
+    max-width: var(--max-line-width); }
 
-header {
-  margin-block: 0 0.495rem; }
-
+/* Horizontal rule */
 hr {
+  /* Add vertical rhythm margins. */
+  margin-block: var(--spacing-m);
+  border: 0;
+  border-block-start: 1px solid var(--color-border);
   height: 0; }
 
+/* Paragraphs */
 p {
-  margin-block: 0 1.5rem;
-  text-wrap: pretty; }
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m);
+  /* Nicer text wrap, e.g. no lone word on last line. */
+  text-wrap: pretty;
+  /* Set max text line width in main for readability. */ }
   .main p {
     max-width: var(--max-line-width); }
 
+/* Preformatted text */
 pre {
-  margin-block: 0 1.5rem;
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m);
   font-family: var(--ff-monospace); }
 
+/* Code */
+/* Do not set colour for code with syntax highlighting. */
 code:not([data-lang]),
 kbd,
 samp {
   color: var(--color-code); }
 
+/* Headings
+
+All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
+classes are also available, for when you want to match the font styling of a
+heading but not be a heading. */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-block: 1.5em 0.495em;
+  margin-block: 1.5em .5em;
   color: var(--color-headings);
   font-family: var(--ff-headings);
   font-weight: var(--fw-headings);
   line-height: var(--heading-line-height);
-  text-wrap: balance; }
+  text-wrap: balance;
+  /* Smaller margin when a headeing is right after another heading. */
+  /* Set max text line width in main for readability. */ }
   h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6,
   h2 + h1,
   h2 + h2,
@@ -287,12 +563,14 @@ h6 {
   h6 + h4,
   h6 + h5,
   h6 + h6 {
-    margin-block-start: 0.75em; }
+    margin-block-start: .75em; }
   .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
     max-width: var(--max-line-width); }
 
 h1 {
-  margin-block: 1.5rem 0.75rem;
+  /* h1 only on top of page so different margins. */
+  margin-block-start: var(--spacing-m);
+  margin-block-end: var(--spacing-xs);
   font-size: var(--fs-xxl);
   letter-spacing: -.01em; }
 
@@ -313,6 +591,7 @@ h5 {
 h6 {
   font-size: var(--fs-xs); }
 
+/* Figure and image. */
 figure.image,
 img.image {
   --image-padding: .75rem; }
@@ -335,19 +614,23 @@ img.image {
       float: right;
       clear: both; } }
 figure {
-  margin-block: 0 1.5rem; }
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m); }
   figure.image figcaption {
-    padding-block-start: var(--image-padding); }
+    padding-block-start: var(--image-padding);
+    contain: inline-size;
+    /* Set max text line width in main for readability. */
+    max-width: var(--max-line-width);
+    /* Nicer text wrap, e.g. no lone word on last line. */
+    text-wrap: pretty; }
     @media (min-width: 666px) {
       figure.image figcaption {
-        display: table-caption;
-        caption-side: bottom;
         padding-block-start: 0; } }
     figure.image figcaption p {
       margin: 0; }
   @media (min-width: 666px) {
     figure.image {
-      display: table; }
+      inline-size: fit-content; }
       figure.image.left figcaption {
         padding-inline-end: var(--image-padding);
         padding-block-end: var(--image-padding); }
@@ -358,11 +641,27 @@ figure {
     width: 95%; }
 
 img.image {
-  margin-block: 0 1.5rem; }
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m); }
 
+/* Links
+
+Hyperlinks are used to allow the user to navigate to other resources or to
+download a resource.
+
+The order of link states are based on Eric Meyer's article:
+http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
+
+:visited - A link that has already been visited.
+:hover   - A link that is being hovered over.
+:focus   - A link that has been given keyboard focus.
+:active  - A link that is being actively clicked. */
 a {
   color: var(--color-link); }
 
+/* Any element can receive focus, but only links can be visited, so we can
+safely lower this selector's specificity. This also ensures visited links
+with additional styles won't have their styles overridden. */
 :visited {
   color: var(--color-link-visited); }
 
@@ -373,9 +672,12 @@ a:focus {
 a:active {
   color: var(--color-link-active); }
 
+/* Remove underline from links to current page to */
+/* indicate that there is no need to click on it. */
 [aria-current] {
   text-decoration: none; }
 
+/* Use smooth scrolling unless user prefer less motion. */
 @media (prefers-reduced-motion: no-preference) {
   :has(:target) {
     scroll-behavior: smooth;
@@ -392,42 +694,57 @@ a:active {
   .pager a:focus {
     text-decoration: underline; }
 
-.link-inverted a,
-.card--inverted a,
-.box--inverted a {
+/* Inverted links, for dark backgrounds. */
+.link-inverted a:link,
+.card--inverted a:link,
+.box--inverted a:link {
   color: var(--color-link-inverted); }
-  .link-inverted a:visited,
-  .card--inverted a:visited,
-  .box--inverted a:visited {
-    color: var(--color-link-visited-inverted); }
-  .link-inverted a:hover, .link-inverted a:focus,
-  .card--inverted a:hover,
-  .box--inverted a:hover,
-  .card--inverted a:focus,
-  .box--inverted a:focus {
-    color: var(--color-link-hover-inverted); }
-  .link-inverted a:active,
-  .card--inverted a:active,
-  .box--inverted a:active {
-    color: var(--color-link-active-inverted); }
 
+.link-inverted a:visited,
+.card--inverted a:visited,
+.box--inverted a:visited {
+  color: var(--color-link-visited-inverted); }
+
+.link-inverted a:hover, .link-inverted a:focus,
+.card--inverted a:hover,
+.box--inverted a:hover,
+.card--inverted a:focus,
+.box--inverted a:focus {
+  color: var(--color-link-hover-inverted); }
+
+.link-inverted a:active,
+.card--inverted a:active,
+.box--inverted a:active {
+  color: var(--color-link-active-inverted); }
+
+/* Tables */
 table {
-  margin-block: 0 1.5rem;
+  /* Add vertical rhythm margins. */
+  margin-block: 0 var(--spacing-m);
+  /* Remove default spacing between table cells. */
   border-collapse: collapse;
+  /* Prevent cramped-looking tables */
   width: 100%; }
 
 td,
 th {
+  /* Remove most spacing between table cells. */
   padding: 0;
+  /* Align content to top of cells. */
   vertical-align: text-top; }
 
 th {
+  /* Align content to bottom of headers. */
   vertical-align: bottom; }
 
 caption,
 th {
+  /* Align all text the same. */
   text-align: start; }
 
+/* Layouts */
+/* stylelint-disable no-duplicate-selectors */
+/* Initial layout setup. */
 .layout__page {
   max-width: var(--max-page-width); }
   @media (min-width: 666px) {
@@ -437,8 +754,11 @@ th {
       min-height: 100svh; } }
 .layout__header, .layout__footer, .layout__main, .layout__navigation, .layout__first-sidebar, .layout__second-sidebar, .layout__page-top, .layout__page-bottom, .layout__cookieconsent {
   padding-inline: var(--gutters);
-  min-width: 0; }
+  min-width: 0;
+  /* With display grid defaults to auto, making <pre> overflow. */ }
 
+/* If page width is bigger then content with, */
+/* setup grid with breakout and stretch for main section. */
 .layout__navigation > * {
   max-width: var(--max-content-width); }
   @media (min-width: 666px) {
@@ -446,8 +766,12 @@ th {
       margin-inline: auto; } }
 .layout__main, .layout__grid {
   display: grid;
+  /* Writing "Min" instead of "min" to force use of css "min()" instead of sass "min()". */
+  /* stylelint-disable function-name-case */
   grid-template-columns: [stretch-start] minmax(var(--gutters), 1fr) [breakout-start] minmax(0, var(--breakout)) [content-start] Min(calc(100% - var(--gutters) * 2), var(--max-content-width)) [content-end] minmax(0, var(--breakout)) [breakout-end] minmax(var(--gutters), 1fr) [stretch-end];
+  /* stylelint-enable function-name-case */
   padding-inline: 0;
+  /* Stop content in main from stretching. */
   height: fit-content; }
   .layout__main > :not(.breakout, .stretch), .layout__grid > :not(.breakout, .stretch) {
     grid-column: content; }
@@ -457,6 +781,7 @@ th {
     grid-column: stretch;
     padding-inline: var(--gutters); }
 
+/* Setup template areas/rown/columns for page. */
 .layout__page {
   display: grid;
   grid-template-areas: 'head' 'nav' 'top' 'main' 'side1' 'side2' 'bottom' 'foot' 'notice';
@@ -503,9 +828,34 @@ th {
 .layout__cookieconsent {
   grid-area: notice; }
 
+/* Components */
+/* Design components are reusable designs that can be applied using just the CSS
+class names specified in the component. */
+/* Anchor */
+.anchor {
+  --anchor-gap: .5rem;
+  --anchor-opacity: .4;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-items: baseline;
+  gap: var(--anchor-gap); }
+  .anchor a {
+    opacity: 0;
+    text-decoration: none;
+    width: fit-content; }
+  .anchor:has(:focus-visible) a, .anchor:hover a {
+    opacity: var(--anchor-opacity); }
+    .anchor:has(:focus-visible) a:focus-visible, .anchor:has(:focus-visible) a:hover, .anchor:hover a:focus-visible, .anchor:hover a:hover {
+      opacity: 1; }
+  p:has(+ .anchor) {
+    margin-block-end: 0; }
+
+/* Box */
 .box {
-  margin-block: 1.5rem;
-  padding: 0.75rem;
+  /* Add vertical rhythm margins. */
+  margin-block: var(--spacing-m);
+  padding: var(--spacing-xs);
   border: 5px solid var(--color-border); }
   .box__title,
   .box .title {
@@ -518,93 +868,85 @@ th {
     padding-inline: var(--gutters); }
   .box--inverted {
     background: var(--color-border);
-    color: var(--color-text-bg); }
+    color: var(--color-text-bg);
+    /* Make sure headings etc. also gets inverted. */ }
     .box--inverted * {
       color: var(--color-text-bg); }
   .box > *:first-child {
     margin-top: 0; }
   .box > *:last-child {
-    margin-bottom: 0; }
+    margin-block-end: 0; }
 
+/* Button */
 .button,
-button,
 [type='button'],
-[type='reset'],
 [type='submit'] {
+  /* Some styles don't apply to <a> links since they are inline elements by default. */
   display: inline-block;
   font-family: var(--ff-headings);
   text-decoration: none;
   text-align: center;
   width: fit-content;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
   padding: .2rem 1rem;
+  /* Improve usability and consistency of cursor style between image-type `input` and others. */
   cursor: pointer;
   color: var(--color-button-text);
-  background-color: var(--color-button);
-  border: 1px solid var(--color-button);
+  text-shadow: var(--color-button) 0 1px 0;
+  background: linear-gradient(var(--color-button), var(--color-button-hover));
+  border: 1px solid var(--color-button-hover);
   border-radius: var(--radius-s); }
   .button:hover, .button:focus-visible, .button:active,
-  button:hover,
-  button:focus-visible,
-  button:active,
   [type='button']:hover,
   [type='button']:focus-visible,
   [type='button']:active,
-  [type='reset']:hover,
-  [type='reset']:focus-visible,
-  [type='reset']:active,
   [type='submit']:hover,
   [type='submit']:focus-visible,
   [type='submit']:active {
+    /* Override any link underlines and color changes. */
     text-decoration: none;
     color: var(--color-button-text-hover);
-    background-color: var(--color-button-hover); }
+    text-shadow: var(--color-button-hover) 0 1px 0;
+    background: linear-gradient(var(--color-button-hover), var(--color-button)); }
+  .button:active,
+  [type='button']:active,
+  [type='submit']:active {
+    box-shadow: inset 2px 2px 5px var(--color-black-40); }
 
+/* Add button variations here. */
 .button--small {
   font-size: var(--fs-xs);
-  margin-right: .5rem;
-  margin-bottom: .5rem;
   padding: .2rem .75rem; }
 
 .button--alt {
   color: var(--color-button-text-hover);
-  background-color: var(--color-button-hover); }
+  background: var(--color-button-hover); }
   .button--alt:hover, .button--alt:focus-visible, .button--alt:active {
     color: var(--color-button-text);
-    background-color: var(--color-button); }
+    background: var(--color-button); }
 
 .button--outline {
   color: var(--color-button);
-  background-color: var(--color-button-text);
-  border-color: var(--color-button); }
-  .button--outline:hover, .button--outline:focus-visible, .button--outline:active {
-    color: var(--color-button-text);
-    background-color: var(--color-button); }
+  background: var(--color-button-text); }
 
-.button--shadow:hover,
-main button:hover {
-  box-shadow: 2px 2px 5px 1px var(--color-button-hover); }
-
-.button--shadow:active,
-main button:active {
-  box-shadow: inset 2px 2px 5px 1px var(--color-button); }
-
+/* The disabled variation should always go last, so that it overrides any
+other variations. */
 [disabled].button,
-button[disabled],
 [disabled][type='button'],
-[disabled][type='reset'],
 [disabled][type='submit'] {
-  background-color: var(--color-grey-extra-light);
+  background-color: var(--color-grey-200);
   border: 1px solid var(--color-button-disabled);
   background-image: none;
   text-shadow: none; }
 
+/* Cards
+
+A simple cards style. */
 .cards {
-  margin-block: 1.5rem; }
+  /* Add vertical rhythm margins. */
+  margin-block: var(--spacing-m); }
 
 .card {
-  padding: 0.75rem;
+  padding: var(--spacing-xs);
   border: 1px solid var(--color-border); }
   .card--highlight {
     border-color: var(--color-highlight); }
@@ -619,7 +961,7 @@ button[disabled],
   .card > *:first-child {
     margin-top: 0; }
   .card > *:last-child {
-    margin-bottom: 0; }
+    margin-block-end: 0; }
 
 .grid-center {
   display: grid;
@@ -631,6 +973,10 @@ button[disabled],
 .margin-center {
   margin-inline: auto; }
 
+/* Clearfix
+
+Allows the bottom of an element to extend to the bottom of all floated child
+elements. See http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix::before {
   content: '';
   display: table; }
@@ -640,6 +986,7 @@ button[disabled],
   display: table;
   clear: both; }
 
+/* Cookieconsent */
 .cookieconsent {
   display: flex;
   flex-flow: wrap;
@@ -648,111 +995,101 @@ button[disabled],
   position: sticky;
   bottom: 0;
   width: 100%;
-  padding-block-start: .5rem;
+  padding: var(--spacing-xs);
   color: var(--color-warning);
   background-color: var(--color-warning-bg);
-  border-top: 4px solid var(--color-warning-border);
+  border-block-start: 4px solid var(--color-warning-border);
   font-size: var(--fs-s);
   transform: translateY(100vh);
   transition: all 130ms ease-out;
   z-index: 99; }
+  .cookieconsent__actions {
+    display: flex;
+    gap: .5rem; }
+  .cookieconsent[hidden] {
+    display: none; }
 
 .button--accept {
-  border-color: var(--color-status); }
+  border-color: var(--color-success); }
 
 .button--decline {
   border-color: var(--color-warning-border); }
 
-.js-cookieconsent-open {
+[data-cookieconsentopen] {
   transform: translateY(0); }
-
-.divider,
-hr {
-  margin-block: 1.5rem;
-  border: 0;
-  border-top: 1px solid var(--color-border); }
-  .divider > :first-child,
-  hr > :first-child {
-    margin-top: 1.5rem; }
 
 .disabled,
 .pagination .disabled .page-link,
 .pager .disabled .page-link,
 [disabled].button,
-button[disabled],
 [disabled][type='button'],
-[disabled][type='reset'],
 [disabled][type='submit'] {
+  /* Re-set default cursor for disabled elements. */
   cursor: default;
   color: var(--color-button-disabled); }
   .disabled:hover, .disabled:focus, .disabled:active,
   .pagination .disabled .page-link:hover,
   .pager .disabled .page-link:hover,
   [disabled].button:hover,
-  button[disabled]:hover,
   [disabled][type='button']:hover,
-  [disabled][type='reset']:hover,
   [disabled][type='submit']:hover,
   .pagination .disabled .page-link:focus,
   .pager .disabled .page-link:focus,
   [disabled].button:focus,
-  button[disabled]:focus,
   [disabled][type='button']:focus,
-  [disabled][type='reset']:focus,
   [disabled][type='submit']:focus,
   .pagination .disabled .page-link:active,
   .pager .disabled .page-link:active,
   [disabled].button:active,
-  button[disabled]:active,
   [disabled][type='button']:active,
-  [disabled][type='reset']:active,
   [disabled][type='submit']:active {
+    /* Override any link underlines and color changes. */
     color: var(--color-button-disabled);
     text-decoration: none; }
 
 .flex-group {
-  gap: 1.5rem;
+  --flex-gap: calc(var(--base-line-height) * 1rem);
   display: flex;
+  gap: var(--flex-gap);
   flex-wrap: wrap; }
   .flex-group > * {
-    flex: 1;
-    flex-basis: 100%;
-    flex-grow: 0; }
-  .flex-group--grow {
-    flex-grow: 1; }
+    flex: 1; }
   @media (min-width: 666px) {
     .flex-group--2 > * {
-      flex-basis: calc(100% / 2 - 1.5rem); }
+      flex-basis: calc(100% / 2 - var(--flex-gap));
+      flex-grow: 0; }
     .flex-group--3 > * {
-      flex-basis: calc(100% / 3 - 1.5rem); }
+      flex-basis: calc(100% / 3 - var(--flex-gap));
+      flex-grow: 0; }
     .flex-group--4 > * {
-      flex-basis: calc(100% / 4 - 1.5rem); }
+      flex-basis: calc(100% / 4 - var(--flex-gap));
+      flex-grow: 0; }
     .flex-group--5 > * {
-      flex-basis: calc(100% / 5 - 1.5rem); }
+      flex-basis: calc(100% / 5 - var(--flex-gap));
+      flex-grow: 0; }
     .flex-group--6 > * {
-      flex-basis: calc(100% / 6 - 1.5rem); } }
+      flex-basis: calc(100% / 6 - var(--flex-gap));
+      flex-grow: 0; }
+    .flex-group--grow > * {
+      flex-grow: 1; } }
 .flex-inline,
 .pagination,
-.pager,
-.navbar,
-.tags ul {
-  --gap: .5rem;
+.pager {
+  --flex-inline-gap: .5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap);
+  gap: var(--flex-inline-gap);
   padding: 0;
   text-align: start; }
   .flex-inline__item,
   .flex-inline li,
   .pagination li,
-  .pager li,
-  .navbar li,
-  .tags ul li {
+  .pager li {
     list-style: none; }
-  .flex-inline--inline,
-  .tags ul {
+  .flex-inline--inline {
     display: inline-flex; }
 
+/* Branding footer */
 .footer {
   padding-block: var(--gutters);
   background-color: var(--color-footer-bg);
@@ -762,31 +1099,34 @@ button[disabled],
 
 .grid-group,
 .cards {
-  --column-min: 200px;
-  --gap: 1.5rem;
+  --grid-group-column-min: 200px;
+  --grid-group-gap: 1.5rem;
   display: grid;
-  gap: var(--gap);
-  grid-template-columns: repeat(auto-fit, minmax(Min(var(--column-min), 100%), 1fr)); }
+  gap: var(--grid-group-gap);
+  /* Writing "Min" instead of "min" to force use of css "min()" instead of sass "min()". */
+  /* stylelint-disable-next-line function-name-case */
+  grid-template-columns: repeat(auto-fit, minmax(Min(var(--grid-group-column-min), 100%), 1fr)); }
   .grid-group--fill {
-    grid-template-columns: repeat(auto-fill, minmax(Min(var(--column-min), 100%), 1fr)); }
+    /* stylelint-disable-next-line function-name-case */
+    grid-template-columns: repeat(auto-fill, minmax(Min(var(--grid-group-column-min), 100%), 1fr)); }
   .grid-group--100 {
-    --column-min: 100px; }
+    --grid-group-column-min: 100px; }
   .grid-group--150 {
-    --column-min: 150px; }
+    --grid-group-column-min: 150px; }
   .grid-group--200 {
-    --column-min: 200px; }
+    --grid-group-column-min: 200px; }
   .grid-group--250 {
-    --column-min: 250px; }
+    --grid-group-column-min: 250px; }
   .grid-group--300 {
-    --column-min: 300px; }
+    --grid-group-column-min: 300px; }
   .grid-group--350 {
-    --column-min: 350px; }
+    --grid-group-column-min: 350px; }
   .grid-group--400 {
-    --column-min: 400px; }
+    --grid-group-column-min: 400px; }
   .grid-group--500 {
-    --column-min: 500px; }
+    --grid-group-column-min: 500px; }
   .grid-group--600 {
-    --column-min: 600px; }
+    --grid-group-column-min: 600px; }
 
 .grid-stack {
   display: grid; }
@@ -794,15 +1134,25 @@ button[disabled],
     grid-column: 1 / 2;
     grid-row: 1 / 2; }
 
+/* Branding header */
 .header {
-  padding-block: var(--gutters);
+  --header-gap: var(--spacing-s);
+  /* Writing "Min" instead of "min" to force use of css "min()" instead of sass "min()". */
+  /* stylelint-disable-next-line function-name-case */
+  padding-block: Min(var(--gutters), var(--spacing-m));
   display: flex;
   flex-direction: column;
-  gap: var(--gutters);
-  background-color: var(--color-header-bg); }
+  gap: var(--header-gap);
+  background-color: var(--color-header-bg);
+  /* Wrapping link for logo. */
+  /* Logo image. */
+  /* The name of the website. */
+  /* The link around the name of the website. */
+  /* Wrapper for any blocks placed in the header region. */ }
   @media (min-width: 666px) {
     .header {
-      flex-direction: row; } }
+      flex-direction: row;
+      align-items: center; } }
   .header__logo {
     width: fit-content; }
   .header__logo-image {
@@ -814,23 +1164,30 @@ button[disabled],
     color: var(--color-text);
     text-decoration: none; }
   .header__site-link:hover, .header__site-link:focus {
-    text-decoration: none; }
+    text-decoration: underline; }
   @media (min-width: 666px) {
     .header__region {
       margin-inline-start: auto; } }
-  @media (min-width: 666px) {
-    .header__language-selector {
-      margin-inline-start: auto; } }
-.hidden,
-html.nojs .nojs-hidden,
+/* Hidden
+
+Hide elements from all users. Compare to the visually-hidden component.
+
+Used for elements which should not be immediately displayed to any user. An
+example would be a collapsible fieldset that will be expanded with a click
+from a user.
+
+For anything you want to hide on page load when JavaScript is enabled, use
+the `.js-hidden` class. */
+.hidden {
+  display: none; }
+
 html.js .js-hidden {
   display: none; }
 
-.highlight-mark,
-mark {
-  color: var(--color-mark-highlight);
-  background-color: var(--color-mark-bg); }
+html.nojs .nojs-hidden {
+  display: none; }
 
+/* Inline icons. */
 .icon-inline .icon-link {
   opacity: 0;
   transition: all 130ms ease-in;
@@ -845,13 +1202,15 @@ mark {
   display: inline;
   vertical-align: middle; }
 
+/* Language selector */
 .language-selector {
   display: flex; }
 
 .language-icon {
-  margin-inline-end: 0.75rem;
+  margin-inline-end: var(--spacing-xs);
   fill: var(--color-text); }
 
+/* Lists with a straight left margin. */
 .ul-straight-left,
 article > ul,
 aside > ul {
@@ -865,7 +1224,7 @@ aside > ul {
     .ul-straight-left > li::before,
     article > ul > li::before,
     aside > ul > li::before {
-      padding-inline-end: 0.75rem;
+      padding-inline-end: var(--spacing-xs);
       display: table-cell;
       content: '\2981';
       font-size: var(--fs-s); }
@@ -884,7 +1243,7 @@ aside > ol {
     .ol-straight-left > li::before,
     article > ol > li::before,
     aside > ol > li::before {
-      padding-inline-end: 0.75rem;
+      padding-inline-end: var(--spacing-xs);
       display: table-cell;
       content: counter(table-ol) ".";
       font-size: var(--fs-s);
@@ -900,172 +1259,54 @@ aside > ol {
       display: inline;
       padding: inherit; }
 
+/* Messages */
 .message {
   padding: .5rem;
   outline-width: 2px;
   outline-style: solid;
   width: 95%; }
-  .message.status {
-    background-color: var(--color-status-bg);
-    color: var(--color-status);
-    outline-color: var(--color-status); }
+  .message.success {
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+    outline-color: var(--color-success); }
+  .message.info {
+    background-color: var(--color-info-bg);
+    color: var(--color-info);
+    outline-color: var(--color-info); }
   .message.warning {
     background-color: var(--color-warning-bg);
     color: var(--color-warning);
-    outline-color: var(--color-warning-border); }
+    outline-color: var(--color-warning); }
   .message.error {
     background-color: var(--color-error-bg);
     color: var(--color-error);
     outline-color: var(--color-error); }
   .message--highlight {
-    animation: 2s linear infinite outline-highlight; }
+    animation: 2s ease-in-out infinite --outline-highlight; }
 
-@keyframes outline-highlight {
+@keyframes --outline-highlight {
   50% {
     outline-width: .3rem; } }
 
+/* Style for meta content. */
 .meta {
   font-family: var(--ff-headings);
   font-size: var(--fs-xs);
   color: var(--color-text-meta); }
 
-.responsive-video {
-  --aspect-ratio: 9 / 16;
-  position: relative;
-  padding-bottom: calc(var(--aspect-ratio) * 100%);
-  padding-top: 25px;
-  height: 0; }
-  .responsive-video__embed,
-  .responsive-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-  .responsive-video--4-3 {
-    --aspect-ratio: 3 / 4; }
+.overlay {
+  --color-overlay: var(--color-black-20);
+  --color-overlay2: var(--color-black-10);
+  border-image: linear-gradient(var(--color-overlay), var(--color-overlay2)) fill 1; }
 
-.mt--xxl {
-  margin-block-start: 4.5rem; }
+/* Pager
 
-.mb--xxl {
-  margin-block-end: 4.5rem; }
-
-.mtb--xxl {
-  margin-block: 4.5rem; }
-
-.mt--xl {
-  margin-block-start: 3rem; }
-
-.mb--xl {
-  margin-block-end: 3rem; }
-
-.mtb--xl {
-  margin-block: 3rem; }
-
-.mt--l {
-  margin-block-start: 2.25rem; }
-
-.mb--l {
-  margin-block-end: 2.25rem; }
-
-.mtb--l {
-  margin-block: 2.25rem; }
-
-.mt--m {
-  margin-block-start: 1.5rem; }
-
-.mb--m {
-  margin-block-end: 1.5rem; }
-
-.mtb--m {
-  margin-block: 1.5rem; }
-
-.mt--s {
-  margin-block-start: 1.125rem; }
-
-.mb--s {
-  margin-block-end: 1.125rem; }
-
-.mtb--s {
-  margin-block: 1.125rem; }
-
-.mt--xs {
-  margin-block-start: 0.75rem; }
-
-.mb--xs {
-  margin-block-end: 0.75rem; }
-
-.mtb--xs {
-  margin-block: 0.75rem; }
-
-.mt--xxs {
-  margin-block-start: 0.45rem; }
-
-.mb--xxs {
-  margin-block-end: 0.45rem; }
-
-.mtb--xxs {
-  margin-block: 0.45rem; }
-
-.mt--0 {
-  margin-block-start: 0; }
-
-.mb--0 {
-  margin-block-end: 0; }
-
-.mtb--0 {
-  margin-block: 0; }
-
-.zebra-table {
-  --cell-padding: .5rem; }
-  @media (max-width: 666px) {
-    .zebra-table {
-      --cell-padding: .3rem; } }
-  .zebra-table th,
-  .zebra-table td {
-    padding: var(--cell-padding); }
-  .zebra-table thead tr {
-    background-color: var(--color-row-header); }
-  .zebra-table tbody tr:nth-child(odd) {
-    background-color: var(--color-row-odd); }
-  .zebra-table tbody tr:nth-child(even) {
-    background-color: var(--color-row-even); }
-
-.responsive-table {
-  --gap: .5rem; }
-  @media (max-width: 666px) {
-    .responsive-table th {
-      display: none; }
-    .responsive-table td {
-      display: grid;
-      gap: var(--gap);
-      grid-template-columns: 12ch auto; }
-      .responsive-table td::before {
-        content: attr(aria-label) ":";
-        font-weight: var(--fw-bold); }
-      .responsive-table td:first-of-type {
-        padding-block-start: var(--gap); }
-      .responsive-table td:last-of-type {
-        padding-block-end: var(--gap); } }
-.tags ul {
-  margin-block: 0; }
-
-.visually-hidden:not(:focus, :active) {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  white-space: nowrap; }
-
-.navbar {
-  margin-block: 0; }
-
+Paged navigation is a list of page numbers when more than 1 page of content
+is available. */
 .pagination,
 .pager {
-  margin-block: 1.5rem;
+  /* Add vertical rhythm margins. */
+  margin-block: var(--spacing-m);
   justify-content: center; }
   .pagination__item,
   .pagination .page-link,
@@ -1076,6 +1317,160 @@ aside > ol {
   .pager .active {
     font-weight: var(--fw-bold); }
 
+/* Responsive video
+
+Using a wrapper div, embedded videos can be made responsive so that their
+intrinsic aspect ratio is preserved at any screen width. The
+`responsive-video__embed` class is optional if the embed is an `iframe`.
+
+.responsive-video--4-3 - A video with a 4:3 aspect ratio instead of the
+default 16:9 one. */
+.responsive-video {
+  --aspect-ratio: 9 / 16;
+  /* 16:9 aspect ratio */
+  position: relative;
+  padding-block-end: calc(var(--aspect-ratio) * 100%);
+  /* 16:9 aspect ratio */
+  padding-block-start: 25px;
+  /* Height of video controls */
+  height: 0; }
+  .responsive-video iframe, .responsive-video__embed {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    height: 100%; }
+  .responsive-video--4-3 {
+    --aspect-ratio: 3 / 4;
+    /* 4:3 aspect ratio */ }
+
+.mt--xxl {
+  margin-block-start: var(--spacing-xxl); }
+
+.mt--xl {
+  margin-block-start: var(--spacing-xl); }
+
+.mt--l {
+  margin-block-start: var(--spacing-l); }
+
+.mt--m {
+  margin-block-start: var(--spacing-m); }
+
+.mt--s {
+  margin-block-start: var(--spacing-s); }
+
+.mt--xs {
+  margin-block-start: var(--spacing-xs); }
+
+.mt--xxs {
+  margin-block-start: var(--spacing-xxs); }
+
+.mt--0 {
+  margin-block-start: 0; }
+
+.mb--xxl {
+  margin-block-end: var(--spacing-xxl); }
+
+.mb--xl {
+  margin-block-end: var(--spacing-xl); }
+
+.mb--l {
+  margin-block-end: var(--spacing-l); }
+
+.mb--m {
+  margin-block-end: var(--spacing-m); }
+
+.mb--s {
+  margin-block-end: var(--spacing-s); }
+
+.mb--xs {
+  margin-block-end: var(--spacing-xs); }
+
+.mb--xxs {
+  margin-block-end: var(--spacing-xxs); }
+
+.mb--0 {
+  margin-block-end: 0; }
+
+.mx--xxl {
+  margin-block: var(--spacing-xxl); }
+
+.mx--xl {
+  margin-block: var(--spacing-xl); }
+
+.mx--l {
+  margin-block: var(--spacing-l); }
+
+.mx--m {
+  margin-block: var(--spacing-m); }
+
+.mx--s {
+  margin-block: var(--spacing-s); }
+
+.mx--xs {
+  margin-block: var(--spacing-xs); }
+
+.mx--xxs {
+  margin-block: var(--spacing-xxs); }
+
+.mx--0 {
+  margin-block: 0; }
+
+.zebra-table {
+  --table-cell-padding: .5rem; }
+  @media (max-width: 666px) {
+    .zebra-table {
+      --table-cell-padding: .3rem; } }
+  .zebra-table th,
+  .zebra-table td {
+    padding: var(--table-cell-padding); }
+  .zebra-table thead tr {
+    background-color: var(--color-row-header); }
+  .zebra-table tbody tr:nth-child(odd) {
+    background-color: var(--color-row-odd); }
+  .zebra-table tbody tr:nth-child(even) {
+    background-color: var(--color-row-even); }
+
+.responsive-table {
+  --table-gap: .5rem; }
+  @media (max-width: 666px) {
+    .responsive-table th {
+      display: none; }
+    .responsive-table td {
+      display: grid;
+      gap: var(--table-gap);
+      grid-template-columns: 12ch auto; }
+      .responsive-table td::before {
+        content: attr(aria-label) ":";
+        font-weight: var(--fw-bold); }
+      .responsive-table td:first-of-type {
+        padding-block-start: var(--table-gap); }
+      .responsive-table td:last-of-type {
+        padding-block-end: var(--table-gap); } }
+.tags ul {
+  margin-block: 0; }
+
+/* Visually hidden
+
+Make an element visually hidden, but accessible to screen readers, etc. */
+.visually-hidden:not(:focus, :active) {
+  position: absolute;
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.wrap-any {
+  overflow-wrap: anywhere; }
+
+.wrap-word {
+  overflow-wrap: break-word; }
+
+/* Zen styles */
+/* Zen custom styles */
+/* Page */
 body {
   background-color: var(--color-backdrop); }
 
@@ -1083,21 +1478,20 @@ body {
   background-color: var(--color-body-bg); }
 
 .footer {
-  border-top: 2px solid var(--color-border); }
+  border-block-start: 2px solid var(--color-border); }
 
+/* Apply smaller text to blocks, footer etc. */
 th,
 label,
 legend,
 figcaption {
   font-size: var(--fs-s); }
 
-.language-selector {
-  font-size: var(--fs-xs);
-  margin-top: 20px; }
-
+.language-selector,
 .footer {
   font-size: var(--fs-xs); }
 
+/* Apply heading font stack and colour to labels etc. */
 th,
 label,
 legend,
@@ -1111,6 +1505,7 @@ th,
 label {
   font-weight: var(--fw-headings); }
 
+/* Article and content. */
 @media (min-width: 666px) {
   article .submitted,
   article .tags {
@@ -1127,8 +1522,7 @@ article pre {
   border: 1px solid var(--color-border-light);
   background-color: var(--color-text-bg);
   overflow: auto;
-  max-height: 300px;
-  max-width: 90vw; }
+  max-height: 300px; }
   article pre.chroma {
     max-height: initial;
     overflow-x: scroll; }
@@ -1139,41 +1533,97 @@ article pre {
 .content-dates {
   text-align: end; }
 
-.main-menu {
-  margin-top: .75rem;
-  outline: 0; }
-  .main-menu li {
-    margin-bottom: .75rem;
-    padding: 0; }
-  .main-menu a {
-    display: block;
-    background-color: var(--color-button);
-    color: var(--color-text-bg);
-    padding: 2px 8px;
-    text-decoration: none; }
-    .main-menu a:hover, .main-menu a:focus {
-      background-color: var(--color-button-hover); }
-    .main-menu a:active, .main-menu a[aria-current] {
-      background-color: var(--color-button-hover);
-      text-decoration: none; }
+.repository-links {
+  justify-content: end;
+  align-items: center; }
+  .repository-links svg {
+    order: 1; }
 
+/* Navigation */
+.main-menu a {
+  display: block;
+  background-color: var(--color-button);
+  color: var(--color-button-text);
+  padding: 2px 8px;
+  text-decoration: none; }
+  .main-menu a:hover, .main-menu a:focus {
+    background-color: var(--color-button-hover); }
+  .main-menu a:active, .main-menu a[aria-current] {
+    text-decoration: underline; }
+
+/* Search */
 .search-text {
   font-size: var(--fs-l); }
 
-main input:not(:placeholder-shown):valid,
-main textarea:not(:placeholder-shown):valid {
-  background-color: var(--color-status-bg); }
+/* Copy code */
+[data-codeblock] {
+  position: relative; }
+  [data-codeblock] > pre {
+    padding-block-start: 1lh; }
 
-main input:not(:placeholder-shown):invalid,
-main textarea:not(:placeholder-shown):invalid {
-  background-color: var(--color-error-bg); }
+.codebutton {
+  position: absolute;
+  inset-inline-end: .2rem;
+  background: unset;
+  border: unset;
+  text-shadow: unset;
+  font-size: var(--fs-l);
+  color: var(--color-border);
+  rotate: 90deg;
+  cursor: pointer; }
+  .codebutton > span {
+    pointer-events: none; }
+  .codebutton:hover, .codebutton:focus-visible, .codebutton:active {
+    scale: 1.15; }
 
-.js-submitted input:valid,
-.js-submitted textarea:valid {
-  background-color: var(--color-status-bg); }
+.flash-item {
+  animation: --flash 500ms ease-in-out 1; }
 
-.js-submitted input:invalid,
-.js-submitted textarea:invalid {
-  background-color: var(--color-error-bg); }
+@keyframes --flash {
+  50% {
+    border-color: var(--color-warning);
+    background-color: var(--color-warning-bg); } }
+
+/* Custom styles */
+:root {
+  --color-orange: #f90;
+  --color-orange-light: #f9a;
+  --color-orange-dark: #c60;
+  --color-orange-alt: #f60;
+  --color-purple: #6f42c1;
+  --color-purple-light: #b392f0;
+  --color-purple-dark: #4b2e83;
+  --color-purple-alt: #8a63d2;
+  --color-brand: var(--color-purple);
+  --color-brand-alt: var(--color-orange);
+  --color-brand-light: var(--color-purple-light);
+  --color-brand-dark: var(--color-purple-dark);
+  --color-header-bg: var(--color-grey-100);
+  --color-footer-bg: var(--color-grey-100); }
+
+.header__region {
+  margin-left: auto;
+  margin-right: auto; }
+
+.header {
+  height: 100px; }
+
+.main-menu a {
+  text-decoration: none; }
+  .main-menu a:hover, .main-menu a:focus {
+    background-color: var(--color-button-hover); }
+  .main-menu a:active, .main-menu a[aria-current] {
+    background-color: var(--color-button-hover);
+    text-decoration: none; }
+
+.header__language-selector {
+  display: none;
+  /* If the key exists in the map */
+  /* Prints a media query based on the value */ }
+  @media (min-width: 666px) {
+    .header__language-selector {
+      display: block; } }
+.mobile-nav__toggle {
+  top: var(--gutters); }
 
 /*# sourceMappingURL=styles.css.map */

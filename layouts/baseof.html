@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="nojs" lang="{{ site.LanguageCode | default site.Language.Lang }}" dir="{{ site.Language.LanguageDirection | default "ltr" }}">
+<html class="nojs" lang="{{ site.Language.LanguageCode | default site.Language.Lang }}" dir="{{ site.Language.LanguageDirection | default "ltr" }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -9,19 +9,18 @@
     {{else -}}
         {{with .GetTerms "hidden_title" }}{{ range . }}{{.LinkTitle}}{{end}}{{end}}
     {{end -}} – {{ site.Title }}{{ end }}</title>
-{{ partial "meta.html" . }}
-{{ partialCached "styles.html" . }}
-{{ partial "meta_json_ld.html" . }}
-{{ partial "scripts.html" . }}
-{{ partial "math.html" . }}
-{{ partialCached "tracking.html" . }}
-{{ if templates.Exists "partials/head.html" -}}
-{{ partial "head.html" . }}
-{{ end -}}
+{{ partial "head/meta.html" . }}
+{{ partialCached "head/favicons.html" . }}
+{{ partialCached "head/styles.html" . }}
+{{ partial "head/meta-json-ld.html" . }}
+{{ partial "head/scripts.html" . }}
+{{ partial "head/math.html" . }}
+{{ partialCached "head/tracking.html" . }}
+{{ partial "head/extra.html" . }}
 {{ block "head" . }}{{ end }}
 </head>
 
-<body class="{{ if .IsPage }}single-page{{ else }}list-page{{ end }}{{ if .IsHome }} front{{ end }}{{ with $.Param "bodyclass" }} {{ . }}{{ end }}">
+<body class="{{ if .IsPage }}single-page{{ else }}list-page{{ end }}{{ if .IsHome }} front{{ end }}{{ with .Section }} section-page--{{ . | urlize }}{{ end }}{{ with $.Param "bodyclass" }} {{ . }}{{ end }}">
 <div class="page layout__page{{ if $.Param "sidebar" }} layout__sidebar-second{{ end }}">
 <header class="header layout__header">
 {{ if $.Param "logo" | default true -}}
@@ -36,7 +35,7 @@
 {{ if $.Param "menuinheader" }}{{ partial "menu.html" . }}{{ end -}}
 </div>
 <div class="region header__language-selector">
-{{ if site.IsMultiLingual }}{{ partial "language-selector.html" . }}{{ end -}}
+{{ if hugo.IsMultilingual }}{{ partial "language-selector.html" . }}{{ end -}}
 </div>
 </header>
 
@@ -46,17 +45,6 @@
 {{ block "main" . }}{{ end }}
 
 {{ if $.Param "sidebar" }}{{ partial "sidebar.html" . }}{{ end -}}
-
-<footer class="footer layout__footer mt--l">
-{{ if templates.Exists "partials/footer.html" -}}
-{{ partial "footer.html" . }}
-{{ else -}}
-{{ if $.Param "feedlinks" }}{{ partial "feedlinks.html" . }}{{ end -}}
-<p>{{ with $.Param "copyright" }}{{ . | markdownify }}{{ else }}<span>© {{ site.Title }}</span>{{ end }}</p>
-{{ with $.Param "footer" }}<p>{{ . | markdownify }}</p>{{ end }}
-{{ if $.Param "poweredby" }}<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>{{ end }}
-{{ end -}}
-</footer>
 
 {{ if $.Param "cookieconsent" }}{{ partialCached "cookieconsent.html" . }}{{ end -}}
 </div>

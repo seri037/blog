@@ -1,14 +1,16 @@
 ---
 title: "seri037's blog"
 baseURL: "http://seri037.github.io/"
-theme: "github.com/frjo/hugo-theme-zen/v3"
+theme: "github.com/frjo/hugo-theme-zen/v5"
 languageCode: "en-US"
 defaultContentLanguage: "en"
 pluralizelisttitles: false
 removePathAccents: true
 enableEmoji: true
-paginate: 10
-paginatePath: "page"
+summaryLength: 30
+pagination:
+  pagerSize: 10
+  path: page
 rssLimit: 20
 author:
   name: "seri037"
@@ -73,8 +75,6 @@ params:
   logoHeight: 64
   blogSections:
     - posts
-  #breadcrumbSections:
-  #  - post
   mainSections:
   mobileMenu: true
   mobileMenuOutline: true

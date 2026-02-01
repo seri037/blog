@@ -1,0 +1,62 @@
+:root {
+    --color-orange: #f90;
+    --color-orange-light: #f9a;
+    --color-orange-dark: #c60;
+    --color-orange-alt: #f60;
+
+    --color-purple: #6f42c1;
+    --color-purple-light: #b392f0;
+    --color-purple-dark: #4b2e83;
+    --color-purple-alt: #8a63d2;
+
+    --color-brand: var(--color-purple);
+    --color-brand-alt: var(--color-orange);
+    --color-brand-light: var(--color-purple-light);
+    --color-brand-dark: var(--color-purple-dark);
+
+    --color-header-bg: var(--color-grey-100);
+    --color-footer-bg: var(--color-grey-100);
+}
+
+.header__region{
+    // center
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    // height
+    height: 100px;
+}
+
+
+.main-menu {
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-hover);
+    }
+
+    &:active,
+    &[aria-current] {
+      background-color: var(--color-button-hover);
+      text-decoration: none;
+    }
+  }
+}
+
+.header__language-selector { // stylelint-disable selector-class-pattern
+  display: none;
+
+  @include respond-to(s) {
+    display: block;
+  }
+} // stylelint-enable selector-class-pattern
+
+.mobile-nav {
+  &__toggle {
+    top: var(--gutters);
+  }
+}
