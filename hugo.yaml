@@ -42,7 +42,7 @@ outputs:
 
 params:
   contact: "serix2004@gmail.com"
-  copyright: '<!--Creative Commons License-->This site is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> licence.<!--/Creative Commons License-->'
+  copyright: '<a href="https://seri037.github.io/blog/">seri037''s blog</a> © 2026 by <a href="mailto://serix2004@gmail.com">seri037</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>'
   description: "seri%'s blog."
   siteName: false
   menuInHeader: true 
