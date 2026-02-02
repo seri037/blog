@@ -121,6 +121,28 @@ a {
   font-family: var(--ff-monospace);
 }
 
+/* Search input styling */
+input[type='search'][data-search-text] {
+  width: 100%;
+  max-width: 28rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: 0;
+  background: var(--color-text-bg);
+  color: var(--color-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+input[type='search'][data-search-text]::placeholder {
+  color: var(--color-text-meta);
+}
+
+input[type='search'][data-search-text]:focus {
+  outline: none;
+  border-color: var(--color-border);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-border) 35%, transparent);
+}
+
 .mobile-nav {
   &__toggle {
     top: var(--gutters);

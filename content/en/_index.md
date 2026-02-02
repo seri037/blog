@@ -5,5 +5,3 @@ submitted: false
 ---
 # :wave:
 Hi there! Welcome to my blog.
-
-{{< search >}}
