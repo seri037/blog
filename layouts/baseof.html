@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html class="nojs" lang="{{ site.Language.LanguageCode | default site.Language.Lang }}" dir="{{ site.Language.LanguageDirection | default "ltr" }}">
 <head>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || t === "light") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+    } catch (e) {}
+  })();
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>{{ block "title" . }}
@@ -48,5 +58,6 @@
 
 {{ if $.Param "cookieconsent" }}{{ partialCached "cookieconsent.html" . }}{{ end -}}
 </div>
+{{ partial "tools-toolbar.html" . }}
 </body>
 </html>

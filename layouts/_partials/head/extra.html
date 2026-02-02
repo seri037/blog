@@ -1,0 +1,7 @@
+{{ $opts := dict "minify" true -}}
+{{ if eq hugo.Environment "development" -}}
+  {{ $opts = merge $opts (dict "minify" false) -}}
+{{ end -}}
+{{ $js := resources.Get "js/tools-toolbar.js" | js.Build $opts | fingerprint -}}
+<script defer src="{{ $js.RelPermalink }}"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,0,0">
