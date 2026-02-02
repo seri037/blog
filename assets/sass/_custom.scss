@@ -78,6 +78,10 @@
   }
 } // stylelint-enable selector-class-pattern
 
+.language-selector a {
+  font-family: var(--ff-monospace);
+}
+
 .mobile-nav {
   &__toggle {
     top: var(--gutters);
