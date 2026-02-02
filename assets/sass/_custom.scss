@@ -41,6 +41,18 @@
     --color-backdrop: #f3edf7;
 }
 
+/* Theme transition */
+html,
+body,
+.page,
+.header,
+.footer,
+.tools-toolbar__btn,
+.tools-toolbar__tooltip,
+a {
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
 .header__region{
     // center
     margin-left: auto;
