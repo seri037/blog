@@ -69,7 +69,6 @@ a {
   .flex-inline {
     width: 100%;
     flex-wrap: nowrap;
-    gap: 0;
   }
 
   .flex-inline li {
@@ -85,16 +84,27 @@ a {
     font-weight: var(--fw-medium);
     font-size: medium;
     text-decoration: none;
-    border-bottom: 1.5px solid transparent;
-    border-bottom-color: var(--color-header-bg);
+    border-bottom: 0;
+    min-height: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .main-menu__label {
+      display: inline-block;
+      border-bottom: 1.5px solid var(--color-header-bg);
+    }
+
 
     &:hover,
     &:focus {
       background-color: transparent;
       color: var(--color-link-hover);
       font-weight: var(--fw-medium);
-      border-bottom: 1.5px solid transparent;
-      border-bottom-color: var(--color-link-hover);
+      .main-menu__label {
+        padding-bottom: 0.05rem;
+        border-bottom-color: var(--color-link-hover);
+      }
     }
 
     &:active,
@@ -103,8 +113,16 @@ a {
       color: var(--color-link-active);
       font-weight: var(--fw-medium);
       text-decoration: none;
-      border-bottom: 1.5px solid transparent;
-      border-bottom-color: var(--color-link-active);
+      .main-menu__label {
+        padding-bottom: 0.05rem;
+        border-bottom-color: var(--color-link-active);
+      }
+    }
+
+    &.is-term-active {
+      .main-menu__label {
+        border-bottom-color: var(--color-link-active);
+      }
     }
   }
 }

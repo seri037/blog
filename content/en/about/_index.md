@@ -1,6 +1,6 @@
 ---
-hidden_title:
-    - About
+title: About
+hidden_title: true
 submitted: false
 ---
 

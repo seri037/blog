@@ -1,5 +1,5 @@
 ---
-hidden_title:
-    - Categories
+    title: Categories
+    hidden_title: true
 ---
 

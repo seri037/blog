@@ -86,6 +86,9 @@ languages:
       - name: About
         pageRef: /about
         weight: 6
+      - name: Search
+        pageRef: /search
+        weight: 8
   
   zh:
     weight: 2
@@ -99,10 +102,13 @@ languages:
         weight: -10
       - name: 分类
         pageRef: /categories
-        weight: 2
+        weight: 3
       - name: 标签
         pageRef: /tags
-        weight: 4
+        weight: 5
       - name: 关于
         pageRef: /about
-        weight: 6
+        weight: 7
+      - name: 搜索
+        pageRef: /search
+        weight: 9

@@ -1,6 +1,6 @@
 ---
-hidden_title:
-    - Home
+title: Home
+hidden_title: true
 submitted: false
 ---
 # :wave:

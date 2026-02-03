@@ -1,4 +1,4 @@
 ---
-hidden_title:
-    - Tags
+title: Tags
+hidden_title: true
 ---
