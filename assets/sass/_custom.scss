@@ -77,8 +77,35 @@ body,
 .footer,
 .tools-toolbar__btn,
 .tools-toolbar__tooltip,
+.main-menu__label::after,
 a {
   transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+/* Background effect layer */
+.site-effect {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.5;
+  transition: opacity 220ms ease;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+:root[data-effect='off'] .site-effect {
+  opacity: 0;
+}
+
+.site-effect canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.layout__page {
+  position: relative;
+  z-index: 1;
 }
 
 .header__region {
@@ -319,4 +346,8 @@ input[type='search'][data-search-text]:focus {
 :root[data-theme='dark'] {
   color-scheme: dark;
   @include theme-dark-vars;
+}
+
+.footer {
+  border-top: 0;
 }

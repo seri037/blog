@@ -31,6 +31,9 @@
 </head>
 
 <body class="{{ if .IsPage }}single-page{{ else }}list-page{{ end }}{{ if .IsHome }} front{{ end }}{{ with .Section }} section-page--{{ . | urlize }}{{ end }}{{ with $.Param "bodyclass" }} {{ . }}{{ end }}">
+<div class="site-effect" aria-hidden="true">
+<canvas id="site-effect-canvas"></canvas>
+</div>
 <div class="page layout__page{{ if $.Param "sidebar" }} layout__sidebar-second{{ end }}">
 <header class="header layout__header">
 {{ if $.Param "logo" | default true -}}
@@ -56,8 +59,12 @@
 
 {{ if $.Param "sidebar" }}{{ partial "sidebar.html" . }}{{ end -}}
 
+<footer class="footer layout__footer mt--l">
+</footer>
+
 {{ if $.Param "cookieconsent" }}{{ partialCached "cookieconsent.html" . }}{{ end -}}
 </div>
+{{ partial "site-effect.html" . }}
 {{ partial "tools-toolbar.html" . }}
 </body>
 </html>
