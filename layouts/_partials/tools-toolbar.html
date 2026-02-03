@@ -1,5 +1,5 @@
 <div class="tools-toolbar" aria-label="Tools">
-  {{ with site.Home.OutputFormats.Get "RSS" }}
+  {{ with .AlternativeOutputFormats.Get "RSS" }}
     <a class="tools-toolbar__btn" href="{{ .RelPermalink }}" aria-label="RSS">
       <span class="material-symbols-sharp tools-toolbar__icon" aria-hidden="true">rss_feed</span>
     </a>
