@@ -60,6 +60,7 @@
 {{ if $.Param "sidebar" }}{{ partial "sidebar.html" . }}{{ end -}}
 
 <footer class="footer layout__footer mt--l">
+{{ partial "footer.html" . }}
 </footer>
 
 {{ if $.Param "cookieconsent" }}{{ partialCached "cookieconsent.html" . }}{{ end -}}
