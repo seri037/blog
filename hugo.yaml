@@ -79,10 +79,12 @@ languages:
         weight: -10
         pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">home</span>'
       - name: Categories
+        identifier: categories
         pageRef: /categories
         weight: 2
         pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">category</span>'
       - name: Tags
+        identifier: tags
         pageRef: /tags
         weight: 4
         pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">label</span>'
@@ -107,10 +109,12 @@ languages:
         weight: -10
         pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">home</span>'
       - name: 分类
+        identifier: categories
         pageRef: /categories
         weight: 3
         pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">category</span>'
       - name: 标签
+        identifier: tags
         pageRef: /tags
         weight: 5
         pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">label</span>'

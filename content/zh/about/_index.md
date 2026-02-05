@@ -1,12 +1,12 @@
 ---
-title: About
+title: 关于
 hidden_title: false
 submitted: false
 ---
 
 #
 
-Hi! I'm seri%. I'm interested in code and electronics, and I'm also learning music production. You can find me at the following links.
+你好! 我是 seri%。 我对代码与电子感兴趣，并且正在学习音乐制作。你可以从以下链接找到我。
 
 [Github](https://www.github.com/seri037)
 
