@@ -1,5 +1,5 @@
 ---
-title: "seri037's blog"
+title: "seri%'s blog"
 baseURL: "http://seri037.github.io/"
 theme: "github.com/frjo/hugo-theme-zen/v5"
 languageCode: "en-US"
@@ -12,7 +12,7 @@ pagination:
   path: page
 rssLimit: 20
 author:
-  name: "seri037"
+  name: "seri%"
   url: "http://github.com/seri037"
 
 taxonomies:
@@ -41,7 +41,7 @@ outputs:
 
 params:
   contact: "serix2004@gmail.com"
-  copyright: '<a href="https://seri037.github.io/blog/">seri037''s blog</a> © 2026 by <a href="mailto://serix2004@gmail.com">seri037</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>'
+  copyright: '<a href="https://seri037.github.io/blog/">seri%''s blog</a> © 2026 by <a href="mailto://serix2004@gmail.com">seri037</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>'
   description: "seri%'s blog."
   siteName: false
   menuInHeader: true 
@@ -97,7 +97,7 @@ languages:
         weight: 8
         pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">search</span>'
   
-  zh:
+  zh-cn:
     weight: 2
     languageName: "ZH"
     languageCode: "zh-CN"

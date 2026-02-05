@@ -1,0 +1,24 @@
+{{ define "main" -}}
+<main class="main layout__main">
+<article class="single-view{{ with .Section }} single-view--{{ . | urlize }}{{ end }}">
+<header>
+<h1 class="title{{ if $.Param "submitted" | default false }} mb--xxs{{ end }}">{{ .Title }}</h1>
+{{ if $.Param "submitted" | default false }}{{ partial "submitted.html" . }}{{ end -}}
+{{ if .Params.tags }}{{ partial "tags.html" . }}{{ end -}}
+</header>
+
+{{ if .Params.translated }}
+<div class="translated">
+  <span class="material-symbols-sharp" aria-hidden="true">smart_toy</span>
+  {{ T "translated" }}
+</div>
+{{ end }}
+
+{{ .Content }}
+
+{{ if ne .Lastmod .Date }}{{ partial "dates.html" . }}{{ end -}}
+{{ if site.Params.repository | default false }}{{ partial "repository-links.html" . }}{{ end -}}
+{{ if $.Param "relatedposts" | default false }}{{ partial "relatedposts.html" . }}{{ end -}}
+</article>
+</main>
+{{ end -}}

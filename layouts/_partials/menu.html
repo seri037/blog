@@ -18,7 +18,7 @@
   {{ $showCat := and $isCategories $catTerm -}}
   {{ $showTag := and $isTags $tagTerm -}}
   {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) $showCat $showTag -}}
-  {{ $label := or (i18n .Identifier) .Name -}}
+  {{ $label := .Name -}}
   {{ $labelPlain := $label | plainify -}}
   <li>
      <a href="{{ .URL | relLangURL }}" class="main-menu__link{{ if $isActive }} is-term-active{{ end }}" aria-label="{{ $labelPlain }}" title="{{ $labelPlain }}"{{ if $isActive }} aria-current="page"{{ end }}>

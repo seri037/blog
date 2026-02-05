@@ -1,6 +1,5 @@
 ---
 title: Home
-hidden_title: false
 submitted: false
 ---
 # :wave:
