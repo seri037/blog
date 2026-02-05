@@ -52,7 +52,7 @@ params:
   #image: ""
   logo : true
   themeColor : "#ffffff"
-  logoPath: "android-chrome-256x256.png"
+  logoPath: "web-app-manifest-512x512.png"
   imageMaxWidth: 400
   logoWidth: 64
   logoHeight: 64
