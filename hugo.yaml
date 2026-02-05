@@ -77,18 +77,23 @@ languages:
       - name: Home
         pageRef: /
         weight: -10
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">home</span>'
       - name: Categories
         pageRef: /categories
         weight: 2
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">category</span>'
       - name: Tags
         pageRef: /tags
         weight: 4
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">label</span>'
       - name: About
         pageRef: /about
         weight: 6
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">info</span>'
       - name: Search
         pageRef: /search
         weight: 8
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">search</span>'
   
   zh:
     weight: 2
@@ -100,15 +105,20 @@ languages:
       - name: 主页
         pageRef: /
         weight: -10
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">home</span>'
       - name: 分类
         pageRef: /categories
         weight: 3
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">category</span>'
       - name: 标签
         pageRef: /tags
         weight: 5
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">label</span>'
       - name: 关于
         pageRef: /about
         weight: 7
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">info</span>'
       - name: 搜索
         pageRef: /search
         weight: 9
+        pre: '<span class="material-symbols-sharp main-menu__icon" aria-hidden="true">search</span>'

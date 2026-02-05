@@ -18,9 +18,11 @@
   {{ $showCat := and $isCategories $catTerm -}}
   {{ $showTag := and $isTags $tagTerm -}}
   {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) $showCat $showTag -}}
+  {{ $label := or (i18n .Identifier) .Name -}}
+  {{ $labelPlain := $label | plainify -}}
   <li>
-     <a href="{{ .URL | relLangURL }}"{{ if $isActive }} aria-current="page" class="is-term-active"{{ end }}>
-      {{ .Pre }}<span class="main-menu__label">{{ or (i18n .Identifier) .Name | safeHTML }}</span>{{ .Post }}
+     <a href="{{ .URL | relLangURL }}" class="main-menu__link{{ if $isActive }} is-term-active{{ end }}" aria-label="{{ $labelPlain }}" title="{{ $labelPlain }}"{{ if $isActive }} aria-current="page"{{ end }}>
+      {{ with .Pre }}{{ . }}{{ end }}<span class="main-menu__label{{ if .Pre }} visually-hidden{{ end }}">{{ $label | safeHTML }}</span>{{ with .Post }}{{ . }}{{ end }}
     </a>
   </li>
 {{ end -}}

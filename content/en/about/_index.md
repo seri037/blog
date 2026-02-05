@@ -1,8 +1,10 @@
 ---
 title: About
-hidden_title: true
+hidden_title: false
 submitted: false
 ---
+
+#
 
 Hi! I'm Chengkun Chen, a second-year undergraduate student in Jilin University. My nicknames are usually "seri037" or "seri%". You can find me at the following links.
 
