@@ -77,9 +77,12 @@ body,
 .footer,
 .tools-toolbar__btn,
 .tools-toolbar__tooltip,
+.main-menu__icon::after,
 .main-menu__label::after,
+.site-effect,
+input[type='search'][data-search-text],
 a {
-  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  transition: all 220ms ease;
 }
 
 /* Background effect layer */
@@ -88,7 +91,6 @@ a {
   inset: 0;
   z-index: 0;
   opacity: 0.5;
-  transition: opacity 220ms ease;
   will-change: opacity;
   pointer-events: none;
 }
@@ -185,7 +187,6 @@ a {
     height: 2px;
     background: var(--color-header-bg);
     transform: translateX(-50%);
-    transition: all 220ms ease;
   }
 
   .main-menu__label::after {
@@ -361,7 +362,6 @@ input[type='search'][data-search-text]:focus {
 .footer {
   border-top: 0;
   opacity: 0;
-  transition: opacity 220ms ease;
 }
 
 .footer:hover {
