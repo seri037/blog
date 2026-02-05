@@ -46,7 +46,6 @@
   if (savedEffect === "off" || savedEffect === "on") {
     root.setAttribute("data-effect", savedEffect);
   }
-  window.__siteEffectPaused = !isEffectEnabled();
 
   setButton();
   setEffectButton();
@@ -62,7 +61,7 @@
     const nextEnabled = !isEffectEnabled();
     root.setAttribute("data-effect", nextEnabled ? "on" : "off");
     localStorage.setItem(effectStorageKey, nextEnabled ? "on" : "off");
-    window.__siteEffectPaused = !nextEnabled;
     setEffectButton();
+    document.dispatchEvent(new CustomEvent("site-effect-toggle"));
   });
 })();
