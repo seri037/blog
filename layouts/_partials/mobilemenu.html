@@ -1,0 +1,47 @@
+<div class="mobile-nav" dir="ltr" hidden>
+  <div class="mobile-nav__cover"></div>
+  <button class="mobile-nav__toggle button{{ if $.Param "mobilemenuoutline" }} button--outline{{ end }}" aria-expanded="false" aria-controls="sheet">
+    {{ i18n "menu_mobile" }}
+    <svg class="mobile-nav__hamburger" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+      <rect width="80" height="12" x="10" y="20" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="45" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="70" rx="5"></rect>
+    </svg>
+  </button>
+  <div class="mobile-nav__sheet link-nav" id="sheet" aria-hidden="true">
+    <nav class="mobile-nav__main-menu" aria-label="{{ i18n "menu_title" }}">
+      <ul class="mobile-nav__navbar">
+        {{ $currentLang := site.Language.LanguageName -}}
+        {{ if hugo.IsMultilingual -}}
+          {{ if .IsTranslated -}}
+            {{ range .Translations -}}
+              <li>
+                <a rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Site.Language.LanguageCode | default .Lang }}" lang="{{ .Site.Language.LanguageCode | default .Lang }}" aria-label="{{ printf "%s -> %s" $currentLang .Language.LanguageName }}" title="{{ printf "%s -> %s" $currentLang .Language.LanguageName }}">
+                  <span class="mobile-nav__lang-current" aria-hidden="true">{{ $currentLang }}</span><span class="visually-hidden">{{ printf "Current language %s, switch to %s" $currentLang .Language.LanguageName }}</span>
+                </a>
+              </li>
+            {{ end -}}
+          {{ else -}}
+            {{ range site.Languages -}}
+              {{ if ne site.Language.Lang .Lang -}}
+                <li>
+                  <a rel="alternate" href="{{ .Lang | relURL }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}" aria-label="{{ printf "%s -> %s" $currentLang .LanguageName }}" title="{{ printf "%s -> %s" $currentLang .LanguageName }}">
+                    <span class="mobile-nav__lang-current" aria-hidden="true">{{ $currentLang }}</span><span class="visually-hidden">{{ printf "Current language %s, switch to %s" $currentLang .LanguageName }}</span>
+                  </a>
+                </li>
+              {{ end -}}
+            {{ end -}}
+          {{ end -}}
+        {{ end -}}
+        {{ $currentPage := . -}}
+        {{ range site.Menus.main -}}
+          <li>
+            <a href="{{ .URL | relLangURL }}" aria-label="{{ .Name }}" title="{{ .Name }}"{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>
+              {{ with .Pre }}{{ . }}{{ end }}{{ if .Pre }}<span class="visually-hidden">{{ .Name }}</span>{{ else }}<span>{{ .Name }}</span>{{ end }}{{ with .Post }}{{ . }}{{ end }}
+            </a>
+          </li>
+        {{ end -}}
+      </ul>
+    </nav>
+  </div>
+</div>
