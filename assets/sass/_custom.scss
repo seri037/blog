@@ -67,6 +67,7 @@
   --color-footer-bg: #fffbfe;
   --color-body-bg: #fffbfe;
   --color-backdrop: #f3edf7;
+  --mobile-nav-state-transition: 170ms;
 }
 
 /* Theme transition */
@@ -423,7 +424,7 @@ input[type='search'][data-search-text]:focus {
   @media (prefers-reduced-motion: no-preference) {
     &__cover,
     &__sheet {
-      transition: opacity 170ms ease, transform 170ms ease;
+      transition: opacity var(--mobile-nav-state-transition) ease, transform var(--mobile-nav-state-transition) ease;
     }
   }
 
@@ -446,6 +447,15 @@ input[type='search'][data-search-text]:focus {
 
   display: grid;
   gap: 0.5rem;
+  transition: opacity var(--mobile-nav-state-transition) ease;
+}
+
+/* Prefer JS-managed body state, with :has() as fallback. */
+body[data-mobile-nav-open] .tools-toolbar,
+body:has(.mobile-nav[data-navopen]) .tools-toolbar {
+  z-index: 18;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .tools-toolbar__btn {

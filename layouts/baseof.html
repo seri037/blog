@@ -64,8 +64,8 @@
 </footer>
 
 {{ if $.Param "cookieconsent" }}{{ partialCached "cookieconsent.html" . }}{{ end -}}
+{{ partial "tools-toolbar.html" . }}
 </div>
 {{ partial "site-effect.html" . }}
-{{ partial "tools-toolbar.html" . }}
 </body>
 </html>
