@@ -580,10 +580,12 @@ input[type='search'][data-search-text]:focus {
   background-color: var(--color-button);
   border-left: 3px solid var(--color-brand);
   width: 100%;
+  transition: background-color 220ms ease, border-color 220ms ease;
 
   .material-symbols-sharp {
     font-size: 1.25rem;
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    transition: none;
   }
 }
 
