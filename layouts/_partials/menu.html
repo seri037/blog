@@ -20,8 +20,20 @@
   {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) $showCat $showTag -}}
   {{ $label := .Name -}}
   {{ $labelPlain := $label | plainify -}}
+  {{ $href := .URL -}}
+  {{ with .Page -}}
+    {{ $href = .RelPermalink -}}
+  {{ else -}}
+    {{ with .PageRef -}}
+      {{ with site.GetPage . -}}
+        {{ $href = .RelPermalink -}}
+      {{ else -}}
+        {{ $href = . | relLangURL -}}
+      {{ end -}}
+    {{ end -}}
+  {{ end -}}
   <li>
-     <a href="{{ .URL | relLangURL }}" class="main-menu__link{{ if $isActive }} is-term-active{{ end }}" aria-label="{{ $labelPlain }}" title="{{ $labelPlain }}"{{ if $isActive }} aria-current="page"{{ end }}>
+     <a href="{{ $href }}" class="main-menu__link{{ if $isActive }} is-term-active{{ end }}" aria-label="{{ $labelPlain }}" title="{{ $labelPlain }}"{{ if $isActive }} aria-current="page"{{ end }}>
       {{ with .Pre }}{{ . }}{{ end }}<span class="main-menu__label{{ if .Pre }} visually-hidden{{ end }}">{{ $label | safeHTML }}</span>{{ with .Post }}{{ . }}{{ end }}
     </a>
   </li>

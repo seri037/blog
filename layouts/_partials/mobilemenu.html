@@ -35,8 +35,20 @@
         {{ end -}}
         {{ $currentPage := . -}}
         {{ range site.Menus.main -}}
+          {{ $href := .URL -}}
+          {{ with .Page -}}
+            {{ $href = .RelPermalink -}}
+          {{ else -}}
+            {{ with .PageRef -}}
+              {{ with site.GetPage . -}}
+                {{ $href = .RelPermalink -}}
+              {{ else -}}
+                {{ $href = . | relLangURL -}}
+              {{ end -}}
+            {{ end -}}
+          {{ end -}}
           <li>
-            <a href="{{ .URL | relLangURL }}" aria-label="{{ .Name }}" title="{{ .Name }}"{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>
+            <a href="{{ $href }}" aria-label="{{ .Name }}" title="{{ .Name }}"{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>
               {{ with .Pre }}{{ . }}{{ end }}{{ if .Pre }}<span class="visually-hidden">{{ .Name }}</span>{{ else }}<span>{{ .Name }}</span>{{ end }}{{ with .Post }}{{ . }}{{ end }}
             </a>
           </li>
