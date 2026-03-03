@@ -4,6 +4,16 @@
 <script>
   (function () {
     try {
+      var isFirefox = /firefox/i.test(
+        typeof navigator !== "undefined" ? navigator.userAgent : ""
+      );
+      if (isFirefox) {
+        var e = localStorage.getItem("site-effect");
+        if (e !== "on") {
+          document.documentElement.setAttribute("data-effect", "off");
+        }
+      }
+
       var t = localStorage.getItem("theme");
       if (t === "dark" || t === "light") {
         document.documentElement.setAttribute("data-theme", t);
